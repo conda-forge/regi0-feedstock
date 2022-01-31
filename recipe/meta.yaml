@@ -1,6 +1,5 @@
 {% set name = "regi0" %}
-{% set version = "0.1.0" %}
-
+{% set version = "0.2.2" %}
 
 package:
   name: {{ name|lower }}
@@ -8,8 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/regi0-{{ version }}.tar.gz
-  sha256: 49c9619c6e302635f73c15da0baf0bdaa79e821be855bd0ec640c5db64b48363
-
+  sha256: 451bb9a2b1cca3ee00f32f3ede28862c422995cd8a01bef8fda0ee14b3911fff
 build:
   number: 0
   noarch: python
@@ -20,31 +18,26 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python >=3.7,<3.10
   run:
     - appdirs
     - click
     - fiona
-    - gdal
-    - gdown
-    - geopandas
-    - numpy
+    - geopandas >=0.10
+    - numpy >=1.15
     - openpyxl
     - pandas
     - pygeos
-    - python >=3.6
+    - python >=3.6,<3.10
     - rapidfuzz
-    - rasterio
+    - rasterio >=1.2
     - rasterstats
     - requests
-    - rtree
     - scipy
-    - shapely
 
 test:
   imports:
     - regi0
-    - regi0.cli
   commands:
     - pip check
     - regi0 --help
