@@ -1,5 +1,6 @@
 {% set name = "regi0" %}
-{% set version = "0.2.1" %}
+{% set version = "0.2.2" %}
+
 
 package:
   name: {{ name|lower }}
@@ -7,7 +8,8 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/regi0-{{ version }}.tar.gz
-  sha256: df40db19d9d8223203a6cc4d0058721e79a237dbb5398a0f48fcd69a9e9487fb
+  sha256: 451bb9a2b1cca3ee00f32f3ede28862c422995cd8a01bef8fda0ee14b3911fff
+
 build:
   number: 0
   noarch: python
@@ -33,9 +35,7 @@ requirements:
     - rasterio >=1.2
     - rasterstats
     - requests
-    - rtree
     - scipy
-    - shapely
 
 test:
   imports:
