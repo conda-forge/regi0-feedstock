@@ -1,6 +1,7 @@
 {% set name = "regi0" %}
 {% set version = "0.2.2" %}
 
+
 package:
   name: {{ name|lower }}
   version: {{ version }}
@@ -8,6 +9,7 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/regi0-{{ version }}.tar.gz
   sha256: 451bb9a2b1cca3ee00f32f3ede28862c422995cd8a01bef8fda0ee14b3911fff
+
 build:
   number: 0
   noarch: python
