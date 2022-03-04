@@ -1,6 +1,5 @@
 {% set name = "regi0" %}
-{% set version = "0.2.2" %}
-
+{% set version = "0.2.3" %}
 
 package:
   name: {{ name|lower }}
@@ -8,19 +7,20 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/regi0-{{ version }}.tar.gz
-  sha256: 451bb9a2b1cca3ee00f32f3ede28862c422995cd8a01bef8fda0ee14b3911fff
+  sha256: 27f89093f0ac3969b3be4fc05158ebf58e9926d6c5aab6a24c04733d5d6260a8
 
 build:
-  number: 0
-  noarch: python
   entry_points:
     - regi0 = regi0.cli.cli:main
+  noarch: python
   script: {{ PYTHON }} -m pip install . -vv
+  number: 0
 
 requirements:
   host:
     - pip
     - python >=3.7,<3.10
+    - tomli
   run:
     - appdirs
     - click
@@ -30,7 +30,7 @@ requirements:
     - openpyxl
     - pandas
     - pygeos
-    - python >=3.6,<3.10
+    - python >=3.7,<3.10
     - rapidfuzz
     - rasterio >=1.2
     - rasterstats
