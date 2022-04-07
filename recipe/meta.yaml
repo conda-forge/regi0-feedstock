@@ -1,5 +1,5 @@
 {% set name = "regi0" %}
-{% set version = "0.2.3" %}
+{% set version = "0.2.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/regi0-{{ version }}.tar.gz
-  sha256: 27f89093f0ac3969b3be4fc05158ebf58e9926d6c5aab6a24c04733d5d6260a8
+  sha256: 038008a34cb74beda7b788ba6d8e9cc5db686fc6debfc238e533954f8ba0ac2d
 
 build:
   entry_points:
