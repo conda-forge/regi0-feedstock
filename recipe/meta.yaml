@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/regi0-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/regi0-{{ version }}.tar.gz
   sha256: 038008a34cb74beda7b788ba6d8e9cc5db686fc6debfc238e533954f8ba0ac2d
 
 build:
@@ -14,12 +14,12 @@ build:
     - regi0 = regi0.cli.cli:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.7,<3.10
+    - python {{ python_min }}
     - tomli
   run:
     - appdirs
@@ -30,7 +30,7 @@ requirements:
     - openpyxl
     - pandas
     - pygeos
-    - python >=3.7,<3.10
+    - python >={{ python_min }},<3.10
     - rapidfuzz
     - rasterio >=1.2
     - rasterstats
@@ -45,6 +45,7 @@ test:
     - regi0 --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/PEM-Humboldt/regi0
